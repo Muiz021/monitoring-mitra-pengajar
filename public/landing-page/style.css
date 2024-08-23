@@ -1,0 +1,123 @@
+/* FONTS */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Radio+Canada:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Unbounded:wght@300;700&display=swap");
+
+/* VARIABLES */
+:root{
+    --primary-color:#39A7FF;
+    --dark-color:#0F0F0F;
+    --gray-color:gray;
+
+    --h1-font-size:40px;
+    --h2-font-size:32px;
+    --small-font-size:14px;
+}
+
+/* RESET CSS */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+img{
+    max-width: 100%;
+}
+
+a{
+    text-decoration: none ;
+}
+
+/* GLOBAL CSS */
+section{
+    padding: 70px 0;
+}
+
+section .section-title{
+    font-size: var(--h2-font-size);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.btn-primary{
+    background-color: var(--primary-color);
+    border: #39A7FF;
+    color: white;
+}
+
+.btn-orange{
+    background-color: var(--primary-color);
+    color: white;
+}
+.btn-orange:hover{
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.text-orange{
+    color: var(--primary-color);
+}
+
+.fs-7{
+    font-size: var(--small-font-size);
+}
+
+.form-control:focus{
+    box-shadow: none;
+    border-color: var(--primary-color);
+}
+
+.bg-orange{
+    background-color: var(--primary-color);
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+
+/* CSS PER SECTION */
+
+/* NAVBAR */
+.navbar .nav-item .nav-link:hover,
+.navbar .nav-item .nav-link:active{
+    color: var(--primary-color);
+}
+
+@media screen and (max-width:990px) {
+ .bg-md-white{
+    background-color: white;
+ }
+
+}
+
+/* hero */
+.hero {
+    background-image: url('https://via.placeholder.com/1920x1080'); /* Ganti dengan URL gambar yang Anda inginkan */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+/* end hero */
+
+
+
+/* FOOTER */
+
+.footer .container-fluid{
+    background-color: var(--primary-color);
+}
+
+@media screen and (max-width:820px) {
+  .footer .title-left{
+    margin-left: -50px;
+  }
+  .footer .title-right{
+    margin-right: -50px;
+  }
+  }
