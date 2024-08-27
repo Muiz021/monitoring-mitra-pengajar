@@ -103,8 +103,8 @@
                                 <th>kode kegiatan</th>
                                 <th>lokasi</th>
                                 <th>Nama</th>
-                                <th>Waktu Mulai</th>
-                                <th>Waktu Selesai</th>
+                                {{-- <th>Waktu Mulai</th>
+                                <th>Waktu Selesai</th> --}}
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -115,10 +115,10 @@
                                     <td>{{ $item->kode_kegiatan }}</td>
                                     <td>{{ $item->lokasi->nama }}</td>
                                     <td>{{ Str::limit($item->nama, 20) }}</td>
-                                    <td>{{ Carbon::parse($item->waktu_mulai)->isoFormat('dddd, DD MMMM YYYY [Jam] HH:mm') }}
+                                    {{-- <td>{{ Carbon::parse($item->waktu_mulai)->isoFormat('dddd, DD MMMM YYYY [Jam] HH:mm') }}
                                     </td>
                                     <td>{{ Carbon::parse($item->waktu_selesai)->isoFormat('dddd, DD MMMM YYYY [Jam] HH:mm') }}
-                                    </td>
+                                    </td> --}}
                                     <td class="d-lg-flex flex-column">
                                         <a href="{{ route('mitra.kegiatan.show', $item->id) }}"
                                             class="btn btn-sm btn-info text-white">

@@ -43,7 +43,7 @@
                         </div>
                     </div>
                 </div>
-                @include('backend.pages.dashboard.modal')
+                {{-- @include('backend.pages.dashboard.modal') --}}
             </div>
             {{-- end profile --}}
 

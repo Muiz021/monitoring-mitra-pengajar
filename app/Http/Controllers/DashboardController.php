@@ -38,8 +38,8 @@ class DashboardController extends Controller
         $user = Auth::user();
         $kegiatan = Kegiatan::get();
         $program = Program::where('mitra_id',$user->mitra->id)->orderBy('created_at','desc')->get();
-        $presensi = Presensi::where('user_id',$user->id)->orderBy('created_at','desc')->get();
+        // $presensi = Presensi::where('user_id',$user->id)->orderBy('created_at','desc')->get();
 
-        return view('backend.pages.dashboard.mitra',['kegiatan' => $kegiatan,'program' => $program,'presensi' => $presensi,'chart' => $chart->build()]);
+        return view('backend.pages.dashboard.mitra',['kegiatan' => $kegiatan,'program' => $program,'chart' => $chart->build()]);
     }
 }
