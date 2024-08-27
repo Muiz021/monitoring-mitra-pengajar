@@ -74,7 +74,7 @@ class AuthController extends Controller
 
         // Kirim notifikasi WhatsApp untuk verifikasi kesiapan untuk mengajar
         $client = new Client();
-        $url = "http://47.250.13.56:8080/message";
+        $url = "http://simonev-mitra-pengajar.my.id:8080/message";
 
         $wa = $pelajar->nomor_ponsel;
         $message = "Silahkan klik untuk konfirmasi akun anda " . $confirmationUrl;
@@ -89,7 +89,7 @@ class AuthController extends Controller
             'verify'  => false,
         ]);
 
-        Alert::success('berhasil', 'silahkan tunggu konfirmasi dari admin');
+        Alert::success('berhasil', 'silahkan klik link yang dikirim admin lewat wa untuk konfirmasi');
         return redirect()->route('login');
     }
 
