@@ -20,7 +20,7 @@ class KinerjaMitraController extends Controller
      */
     public function index()
     {
-        $analisis_kinerja = AnalisiKinerja::with('mitra')->get();
+        // $analisis_kinerja = AnalisiKinerja::with('mitra')->get();
 
            // Ambil data dari database
            $spk = DB::table('mitra')
