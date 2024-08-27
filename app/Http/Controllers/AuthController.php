@@ -74,7 +74,7 @@ class AuthController extends Controller
 
         // Kirim notifikasi WhatsApp untuk verifikasi kesiapan untuk mengajar
         $client = new Client();
-        $url = "http://47.250.13.56/message";
+        $url = "http://47.250.13.56:8080/message";
 
         $wa = $pelajar->nomor_ponsel;
         $message = "Silahkan klik untuk konfirmasi akun anda " . $confirmationUrl;
