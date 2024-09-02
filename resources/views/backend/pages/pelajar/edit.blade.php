@@ -51,8 +51,8 @@
                                         <label class="form-label">Verifikasi</label>
                                         <select class="form-select" aria-label="Multiple select example" name="status">
                                             <option value="" selected>silahkan pilih</option>
-                                            <option value="0" {{$pelajar->status == true ? 'selected' : ''}}>konfirmasi</option>
-                                            <option value="1" {{$pelajar->status == false ? 'selected' : ''}}>belum dikonfirmasi</option>
+                                            <option value="1" {{$pelajar->status == true ? 'selected' : ''}}>konfirmasi</option>
+                                            <option value="0" {{$pelajar->status == false ? 'selected' : ''}}>belum dikonfirmasi</option>
                                         </select>
                                     </div>
 
