@@ -35,7 +35,7 @@ class AuthController extends Controller
             if (Auth::user()->roles === 'mitra') {
                 return redirect()->route('mitra.dashboard');
             } else
-            if(Auth::user()->roles === 'pelajar'){
+            if(Auth::user()->roles === 'pelajar' && Auth::user()->pelajar->status == true){
                 return redirect()->route('pelajar.kusioner.index');
             }else{
                 Alert::info("Info", "silahkan tunggu konfirmasi dari admin");
