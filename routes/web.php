@@ -17,6 +17,7 @@ use App\Http\Controllers\PresensiController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PertanyaanController;
 use App\Http\Controllers\KinerjaMitraController;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
 /*
 |--------------------------------------------------------------------------
@@ -139,7 +140,7 @@ Route::name('mitra.')->prefix('mitra')->middleware(['auth', 'OnlyMitra'])->group
 /**
  * Pelajar
  */
-Route::name('pelajar.')->prefix('pelajar')->group(function(){
+Route::name('pelajar.')->prefix('pelajar')->middleware(['OnlyPelajar','auth'])->group(function(){
     Route::resource('kusioner',KusionerController::class)->except('create');
     Route::get('kusioner/create/{id}',[KusionerController::class,'create'])->name('kusioner.create');
     Route::get('program/{id}/kusioner', [KusionerController::class,'program'])->name('kusioner.program');

@@ -87,12 +87,12 @@
                 />
               </div>
               <div class="mb-3">
-                <label class="form-label">nomor ponsel</label>
+                <label class="form-label">email</label>
                 <input
                   type="text"
                   class="form-control"
-                  name="nomor_ponsel"
-                  placeholder="masukan nomor ponsel"
+                  name="email"
+                  placeholder="masukan nomor email"
                   autofocus
                 />
               </div>

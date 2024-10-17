@@ -6,9 +6,11 @@ use App\Models\User;
 use App\Models\Mitra;
 use GuzzleHttp\Client;
 use App\Models\Pelajar;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class AuthController extends Controller
@@ -38,7 +40,7 @@ class AuthController extends Controller
             if(Auth::user()->roles === 'pelajar' && Auth::user()->pelajar->status == true){
                 return redirect()->route('pelajar.kusioner.index');
             }else{
-                Alert::info("Info", "silahkan tunggu konfirmasi dari admin");
+                Alert::info("Info", "silahkan verifikasi terlebih dahulu");
                 return redirect()->back();
             }
         } else {
@@ -65,31 +67,18 @@ class AuthController extends Controller
         $pelajar = Pelajar::create([
             'user_id' => $user->id,
             'nama' => $data['nama'],
-            'nomor_ponsel' => $data['nomor_ponsel'],
+            'email' => $data['email'],
             'status' => false
         ]);
 
-        // Buat URL konfirmasi
-        $confirmationUrl = route('konfirmasi', ['id' => $pelajar->id]);
+        // Konfirmasi email
+        $subject = "Konfirmasi Akun";
+        Mail::send('auth.pages.email', ['id' => $pelajar->id], function ($message) use($pelajar, $subject) {
+            $message->to($pelajar->email)
+                ->subject($subject);
+        });
 
-        // Kirim notifikasi WhatsApp untuk verifikasi kesiapan untuk mengajar
-        $client = new Client();
-        $url = "http://simonev-mitra-pengajar.my.id:8080/message";
-
-        $wa = $pelajar->nomor_ponsel;
-        $message = "Silahkan klik untuk konfirmasi akun anda " . $confirmationUrl;
-
-        $body = [
-            'phoneNumber' => $wa,
-            'message' => $message,
-        ];
-
-        $client->request('POST', $url, [
-            'form_params' => $body,
-            'verify'  => false,
-        ]);
-
-        Alert::success('berhasil', 'silahkan klik link yang dikirim admin lewat wa untuk konfirmasi');
+        Alert::success('berhasil', 'silahkan verifikasi melalui email');
         return redirect()->route('login');
     }
 

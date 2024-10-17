@@ -25,7 +25,7 @@
                             <th>No</th>
                             <th>Kode</th>
                             <th>nama</th>
-                            <th>mitra</th>
+                            <th>mitra pengajar</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>

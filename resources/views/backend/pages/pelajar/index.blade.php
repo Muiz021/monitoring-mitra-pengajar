@@ -30,6 +30,7 @@
                     <tbody>
                         @foreach ($pelajar as $item)
                             <tr>
+                                {{-- {{dd($item->pelajar->nama)}} --}}
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $item->pelajar->nama }}</td>
                                 <td>@if ($item->pelajar->status == true)
