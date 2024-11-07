@@ -41,16 +41,14 @@
                                         $total_kinerja = $item['skor_akhir'];
                                     @endphp
                                     <td>
-                                        @if ($total_kinerja < 20)
-                                            <span class="text-danger">Sangat Tidak Bagus</span>
-                                        @elseif ($total_kinerja >= 20 && $total_kinerja < 40)
-                                            <span class="text-warning">Tidak Bagus</span>
+                                        @if ($total_kinerja < 40)
+                                            <span class="text-danger">Perlu peningkatan</span>
                                         @elseif ($total_kinerja >= 40 && $total_kinerja < 60)
-                                            <span class="text-info">Netral</span>
+                                            <span class="text-info">Cukup</span>
                                         @elseif ($total_kinerja >= 60 && $total_kinerja < 80)
-                                            <span class="text-primary">Bagus</span>
+                                            <span class="text-primary">Baik</span>
                                         @elseif ($total_kinerja >= 80 && $total_kinerja <= 100)
-                                            <span class="text-success">Sangat Bagus</span>
+                                            <span class="text-success">Sangat Baik</span>
                                         @endif
                                     </td>
 {{--

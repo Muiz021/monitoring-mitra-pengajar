@@ -22,9 +22,9 @@
                                 value="{{ $pelajar->pelajar->nama }}" disabled>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">nomor ponsel</label>
-                            <input type="text" name="nomor_ponsel" class="form-control" placeholder="masukan nomor ponsel"
-                                value="{{ $pelajar->pelajar->nomor_ponsel }}" disabled>
+                            <label class="form-label">email</label>
+                            <input type="email" name="email" class="form-control" placeholder="masukan email"
+                                value="{{ $pelajar->pelajar->email }}" disabled>
                         </div>
                         <div>
                             <a href="{{ Auth::user()->roles == 'admin' ? route('admin.pelajar.index') : route('pegawai.mitra.index') }}"

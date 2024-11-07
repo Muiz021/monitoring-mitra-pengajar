@@ -42,9 +42,9 @@
                                             value="{{ $pelajar->pelajar->nama }}" required>
                                     </div>
                                     <div class="mb-3">
-                                        <label class="form-label">nomor ponsel</label>
-                                        <input type="text" name="nomor_ponsel" class="form-control" placeholder="masukan nomor ponsel"
-                                            value="{{ $pelajar->pelajar->nomor_ponsel }}" required>
+                                        <label class="form-label">email</label>
+                                        <input type="email" name="email" class="form-control" placeholder="masukan email"
+                                            value="{{ $pelajar->pelajar->email }}" required>
                                     </div>
 
                                        <div class="mb-3">
